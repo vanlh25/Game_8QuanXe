@@ -20,18 +20,32 @@ Nhóm thuật toán này còn gọi là tìm kiếm mù, nghĩa là thuật toá
 ##### a. Breadth-First Search (BFS)
 Mô tả: BFS là thuật toán tìm kiếm theo mức (level-order) trong không gian trạng thái. Trong bài toán 8 Quân Xe, BFS mở rộng tất cả các cấu hình quân Xe có thể đặt ở hàng hiện tại trước khi sang hàng tiếp theo. Thuật toán đảm bảo rằng khi tìm thấy cấu hình hợp lệ với 8 quân Xe, đó là lời giải với số bước di chuyển tối thiểu.
 Cách thực hiện:
- - Bắt đầu từ trạng thái ban đầu (bàn cờ trống hoặc cấu hình ngẫu nhiên).
- - Sử dụng hàng đợi (Queue – FIFO) để lưu các trạng thái cần mở rộng.
- - Lần lượt mở rộng từng trạng thái: đặt thêm một quân Xe ở vị trí hợp lệ trên hàng tiếp theo, sinh ra các trạng thái con, thêm vào hàng đợi.
- - Kiểm tra trạng thái con với Goal Test: tất cả 8 quân Xe đều đặt hợp lệ (không cùng hàng, không cùng cột).
- - Lưu các trạng thái đã duyệt để tránh lặp vô hạn.
+  - Bắt đầu từ trạng thái ban đầu (bàn cờ trống hoặc cấu hình ngẫu nhiên).
+  - Sử dụng hàng đợi (Queue – FIFO) để lưu các trạng thái cần mở rộng.
+  - Lần lượt mở rộng từng trạng thái: đặt thêm một quân Xe ở vị trí hợp lệ trên hàng tiếp theo, sinh ra các trạng thái con, thêm vào hàng đợi.
+  - Kiểm tra trạng thái con với Goal Test: tất cả 8 quân Xe đều đặt hợp lệ (không cùng hàng, không cùng cột).
+  - Lưu các trạng thái đã duyệt để tránh lặp vô hạn.
 Ưu điểm:
- - Đảm bảo tìm được cấu hình hợp lệ tối ưu về số bước đặt quân Xe.
- - Hoạt động ổn định, dễ cài đặt.
+  - Đảm bảo tìm được cấu hình hợp lệ tối ưu về số bước đặt quân Xe.
+  - Hoạt động ổn định, dễ cài đặt.
 Nhược điểm:
- - Tốn nhiều bộ nhớ khi không gian trạng thái lớn (nhiều khả năng đặt quân Xe).
- - Chậm nếu số lượng cấu hình khả thi quá nhiều.
+  - Tốn nhiều bộ nhớ khi không gian trạng thái lớn (nhiều khả năng đặt quân Xe).
+  - Chậm nếu số lượng cấu hình khả thi quá nhiều.
 ##### b. Depth-First Search (DFS)
+Mô tả:
+DFS mở rộng các trạng thái theo chiều sâu trước, nghĩa là sẽ cố gắng đặt quân Xe vào các hàng tiếp theo cho đến khi đạt được cấu hình đầy đủ hoặc gặp bế tắc. Khi không thể đặt thêm quân Xe hợp lệ, thuật toán quay lui để thử các vị trí khác.
+Cách thực hiện:
+Bắt đầu với bàn cờ trống.
+Đặt một quân Xe vào một ô hợp lệ trong hàng đầu tiên.
+Đệ quy đặt tiếp các quân Xe vào các hàng kế tiếp.
+Nếu không thể đặt quân Xe nào hợp lệ ở hàng hiện tại → quay lui (backtrack).
+Nếu tất cả 8 hàng đều có quân Xe hợp lệ → tìm được nghiệm.
+Ưu điểm:
+*Sử dụng ít bộ nhớ hơn BFS.
+*Dễ cài đặt với đệ quy.
+Nhược điểm:
+Có thể đi vào các nhánh sâu nhưng sai, tốn thời gian nếu không có giải pháp sớm.
+Không đảm bảo tìm được nghiệm tối ưu.
 ##### c. Iterative Deepening Search (IDS)
 ##### d. Depth-Limited Search (DLS)
 ##### e. Uniform Cost Search (UCS)
@@ -53,10 +67,11 @@ Nhóm này áp dụng cho các môi trường mà trạng thái tiếp theo ph�
 Ví dụ, nếu bài toán 8 Quân Xe mở rộng thành một môi trường “phức tạp” có nhiều người chơi, hoặc mỗi quân Xe có thêm điều kiện di chuyển khác, thuật toán phải tính toán nhiều khả năng trước khi quyết định bước đi. 
 ##### a. AND-OR Search
 ##### b. Belief Search
-
+##### c. Partial Observation
 #### 3.2.5. Constraint Satisfaction Problem Search (Tìm kiếm thỏa mãn ràng buộc)
 Nhóm này dùng khi bài toán có ràng buộc rõ ràng, ví dụ trong 8 Quân Xe, không hai quân Xe được cùng hàng hoặc cùng cột.
 
 Ý tưởng là thử gán giá trị cho các biến (ví dụ: vị trí của từng quân Xe) sao cho không vi phạm ràng buộc. 
+##### a. Backtracking
 ##### b. Forward Checking
 ##### c. AC-3
