@@ -83,3 +83,7 @@ Forward Checking mở rộng Backtracking bằng cách loại bỏ sớm các gi
 ##### c. AC-3
 Mô tả:
 AC-3 (Arc Consistency Algorithm 3) đảm bảo tính nhất quán của các ràng buộc nhị phân giữa các biến. Trong 8 Quân Xe, ràng buộc là “hai quân Xe không được ở cùng cột”.
+
+## 3.3. Kết luận
+Các thuật toán đều có các ưu và nhược điểm riêng sẽ phù hợp trong các ngữ cảnh khác nhau
+Kết quả thuật toán có thể là không tìm ra kết quả chẳng hạn đặc biệt là các thuật toán Local Search và các thuật toán trong môi trường phức tạp.
