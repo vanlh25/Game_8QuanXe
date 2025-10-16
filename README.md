@@ -1,4 +1,4 @@
-ÁP DỤNG CÁC THUẬT TOÁN TÌM KIẾM VÀO GAME 8 QUÂN XE
+# ÁP DỤNG CÁC THUẬT TOÁN TÌM KIẾM VÀO GAME 8 QUÂN XE
 ## 1. Mô tả về bài toán
 Bài toán 8 quân Xe (8 Rooks Problem) yêu cầu đặt 8 quân Xe trên bàn cờ 8x8 sao cho không có hai quân Xe nào tấn công nhau (không cùng hàng hoặc cột).
 Dự án này triển khai 5 nhóm thuật toán tìm kiếm trong Trí tuệ Nhân tạo (AI Search Algorithms) để giải bài toán, so sánh hiệu quả và cách tiếp cận khác nhau.
